@@ -1,25 +1,54 @@
+
+*{
+  box-sizing: border-box;
+}
+body{
+  /* background-color: rgb(214, 229, 230); */
+  /* background-image: url(https://thumbs.dreamstime.com/z/top-view-blank-copyspace-pastel-color-calculator-tiny-home-model-credit-card-pen-as-frame-background-loan-debt-top-170258089.jpg); */
+  background-image: url('./components/loan-jpeg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .main-container{
-  border: 1px solid #000;
-  height: 200vh;
-  background-color: rgb(214, 229, 230);
   text-align: center;
 }
 .sub-container{
-  /* border: 1px solid #000; */
   width: 100vh;
   margin-left: 400px;
-  box-shadow: 5px 8px 8px 8px rgb(172, 149, 149);
-  background-color: rgb(245, 255, 253);
+  box-shadow: 4px 5px 5px 6px rgba(31, 30, 30, 0.479);
+  background-color: rgba(253, 253, 253, 0.817);
   margin-bottom: 10px;
   margin-top: 10px;
   padding: 10px;
+  z-index: -2;
+  border-top-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom-left-radius: 2px;
+  border-top-right-radius: 2px;
 }
 .box1{
   margin-bottom: 18px;
 }
 h1{
   font-weight: bold;
-  font-size: 30px;
-  text-shadow: 4px 4px 5px rgba(243, 108, 24, 0.881);
+  font-size: 50px;
+  text-shadow: 2px 3px 4px rgb(255, 132, 0);
   text-decoration:underline;
+  font-family: 'Righteous', cursive;
+
+}
+table{
+  background: rgb(253, 237, 237);
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+thead th{
+  border: 2px solid rgb(31, 21, 21);
+  padding: 8px;
+}
+tbody td{
+  border: 2px solid rgb(31, 21, 21);
+  padding: 8px;
 }

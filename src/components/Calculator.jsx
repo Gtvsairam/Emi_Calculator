@@ -39,6 +39,7 @@ function EmiCalculator() {
       emiArray.push({
         id: i,
         month: i,
+        Amount: principalAmount,
         emi: monthlyEmi,
       });
     }
@@ -61,21 +62,21 @@ function EmiCalculator() {
   return (
     <div className="main-container">
     <h1>Emi Calculator</h1>
-      <form>
+      <form onClick={(e)=>e.preventDefault()}>
       <div className="sub-container">
         <div className="box1"> 
-                  <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-                  <OutlinedInput
+         <InputLabel htmlFor="Amount">Amount</InputLabel>
+          <OutlinedInput
             id="outlined-adornment-amount"
             startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            label="Amount"
+            label="Amount"            
             onChange={handlePrincipalAmountChange}
             value={principalAmount}
              autoFocus
           />
         </div>
         <div className="box1">
-          <InputLabel htmlFor="">Interest:</InputLabel>
+          <InputLabel htmlFor="Interest">Interest</InputLabel>
           <TextField id="outlined-basic"
            label="Interest" 
            variant="outlined"
@@ -84,7 +85,7 @@ function EmiCalculator() {
             />
             </div>
         <div className="box1">
-          <InputLabel htmlFor="outlined-adornment-months">Duration (in months):</InputLabel>
+          <InputLabel htmlFor="Months">Duration (in months)</InputLabel>
           <TextField id="outlined-basic"
            label="Tenure" 
            variant="outlined"
@@ -99,18 +100,19 @@ function EmiCalculator() {
                 color="success"
                 variant="contained"
                 onClick={calculateEmi}
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 2, mb: 2,}}
               >
                 Submit
               </Button>
        </div>
       </form>
       {emi.length > 0 && (
-        <table>
+        <table border='5'>
           <thead>
             <tr>
               <th>Id</th>
               <th>Month</th>
+              <th>Amount</th>
              <th>EMI</th>
             </tr>
           </thead>
@@ -119,22 +121,32 @@ function EmiCalculator() {
               <tr key={month.id}>
                 <td>{month.id}</td>
                 <td>{month.month}</td>
-                <td>{month.emi.toFixed(2)}</td>
+                <td>{month.Amount}</td>
+                <td>{month.emi.toFixed(2)}/m</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
       <h2>Calculation History</h2>
-      <ul>
+      <ul type="none">
         {calculationHistory.map((calculation, index) => (
           <li key={index}>
-            <button
+          <Button
+                type="submit"
+                color="secondary"
+                variant="contained"
+                onClick={() => setEmi(calculation.emi)}
+                sx={{ mt: 1, mb: 1 }}
+              >
+                Calculation {index + 1}
+              </Button>
+            {/* <button
               type="button"
               onClick={() => setEmi(calculation.emi)}
             >
               Calculation {index + 1}
-            </button>
+            </button> */}
           </li>
         ))}
       </ul>
