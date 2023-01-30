@@ -1,0 +1,25 @@
+.main-container{
+  border: 1px solid #000;
+  height: 200vh;
+  background-color: rgb(214, 229, 230);
+  text-align: center;
+}
+.sub-container{
+  /* border: 1px solid #000; */
+  width: 100vh;
+  margin-left: 400px;
+  box-shadow: 5px 8px 8px 8px rgb(172, 149, 149);
+  background-color: rgb(245, 255, 253);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.box1{
+  margin-bottom: 18px;
+}
+h1{
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: 4px 4px 5px rgba(243, 108, 24, 0.881);
+  text-decoration:underline;
+}
