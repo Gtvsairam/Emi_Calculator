@@ -41,6 +41,8 @@ function EmiCalculator() {
         month: i,
         Amount: principalAmount,
         emi: monthlyEmi,
+        interest:rateOfInterest
+
       });
     }
     setEmi(emiArray);
@@ -113,6 +115,7 @@ function EmiCalculator() {
               <th>Id</th>
               <th>Month</th>
               <th>Amount</th>
+              <th>Interest</th>
              <th>EMI</th>
             </tr>
           </thead>
@@ -122,6 +125,7 @@ function EmiCalculator() {
                 <td>{month.id}</td>
                 <td>{month.month}</td>
                 <td>{month.Amount}</td>
+                <td>{month.interest} % </td>
                 <td>{month.emi.toFixed(2)}/m</td>
               </tr>
             ))}
@@ -141,12 +145,6 @@ function EmiCalculator() {
               >
                 Calculation {index + 1}
               </Button>
-            {/* <button
-              type="button"
-              onClick={() => setEmi(calculation.emi)}
-            >
-              Calculation {index + 1}
-            </button> */}
           </li>
         ))}
       </ul>
